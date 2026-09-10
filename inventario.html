@@ -1,44 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>MarketOps</title>
 </head>
+
 <body>
     <div class="container-fluid">
-    
-    <div class="row vh-100">
-        
-        <div class="col-2 bg-dark text-white p-3">
-            <p style="text-align: center;">Secciones</p>
-            <hr>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="inventario.html">Inventario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ganancias.html">Ganancias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-        </div>
 
-        <div class="col-10 bg-light text-dark p-4">
-            <h2 class="text-center">Inventario</h2>
-            
-            
-        </div>
-            
+        <div class="row vh-100">
+
+            <div class="col-2 bg-dark text-white p-3">
+                <p style="text-align: center;">Secciones</p>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white fw-bold" aria-current="page"
+                            href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50" href="ganancias.html">Ganancias</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-10 bg-light text-dark p-4">
+                <h2 class="text-center">Inventario</h2>
+                <label for="search" class="form-label" >Buscar producto:</label>
+                <input type="text" class="form-control mb-3" id="search" oninput="buscarProducto()" placeholder="Ingrese el nombre del producto">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filtrar Categoria
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Hogar')">Hogar</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Alimentos')">Alimentos</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Gamer')">Gamer</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Licores')">Licores</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('todos')">Mostrar todos</a></li>
+                    </ul>
+                </div>
+                <br>
+                <div class="table-responsive">
+
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Categoria</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+
+                        </thead>
+                        <th>
+                            <tbody id="productTableBody">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Refrigerador</td>
+                                    <td>Hogar</td>
+                                    <td>12</td>
+                                    <td>$189.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Lavadora</td>
+                                    <td>Hogar</td>
+                                    <td>8</td>
+                                    <td>$249.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>teclado mecanico</td>
+                                    <td>Gamer</td>
+                                    <td>3</td>
+                                    <td>$79.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Aspiradora</td>
+                                    <td>Hogar</td>
+                                    <td>4</td>
+                                    <td>$79.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Fideos</td>
+                                    <td>Alimentos</td>
+                                    <td>13</td>
+                                    <td>$990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Telefonos</td>
+                                    <td>Gamer</td>
+                                    <td>1</td>
+                                    <td>$759.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>Television</td>
+                                    <td>Hogar</td>
+                                    <td>15</td>
+                                    <td>$499.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>Mouse</td>
+                                    <td>Gamer</td>
+                                    <td>30</td>
+                                    <td>$34.990</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>Papas Lays</td>
+                                    <td>Alimentos</td>
+                                    <td>30</td>
+                                    <td>$2.500</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>Cerveza</td>
+                                    <td>Licores</td>
+                                    <td>50</td>
+                                    <td>$1.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">11</th>
+                                    <td>Marraqueta</td>
+                                    <td>Alimentos</td>
+                                    <td>100</td>
+                                    <td>$500</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">12</th>
+                                    <td>Blue Label</td>
+                                    <td>Licores</td>
+                                    <td>67</td>
+                                    <td>$250.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">13</th>
+                                    <td>Harina</td>
+                                    <td>Alimentos</td>
+                                    <td>17</td>
+                                    <td>$1.000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">14</th>
+                                    <td>Audifonos</td>
+                                    <td>Gamer</td>
+                                    <td>15</td>
+                                    <td>$30.000</td>
+                                </tr>
+
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
 
         </div>
     </div>
 
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
