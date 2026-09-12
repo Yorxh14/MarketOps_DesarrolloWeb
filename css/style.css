@@ -1,0 +1,96 @@
+.alinearCentro{
+    text-align: center;
+}
+.cardwidth{
+    width: 30rem;
+}  
+.cartitados {
+    position: fixed;
+    top: 150px; 
+    right: 1050px;
+    
+    
+    width: 30rem;
+    height: 18rem;
+}
+.Cartitdadostext{
+ text-align: center;
+}
+.cartitatres {
+    position: fixed;
+    top: 150px; 
+    right: 550px;
+    
+    
+    width: 30rem;
+    height: 18rem;
+}
+
+.cartitacuatro {
+    position: fixed;
+    top: 459px; 
+    right: 550px;
+    
+    
+    width: 61.3rem;
+    height: 19.1rem;
+}
+
+.cartita {
+    position: fixed;
+    top: 150px; 
+    right: 50px;
+}
+.colores{
+    right: 0px;
+    top: 0px;
+}
+.btn-dark {
+ position: absolute;
+    top: 44px;
+   right: 50px;
+ }
+ .barrasdanger{
+    width: 25%;
+ }
+
+ .barraswarning{
+    width: 55%;
+ }
+ .barrassuccess {
+ width: 95%;
+ }
+ .ajusteSesion{
+    width: 100%; max-width: 400px;
+ }
+ .colorIniciarSesion{
+    color: rgb(1, 14, 24);
+ }
+ .tamanoP{
+    font-size: 13px; opacity: 0.7;
+ }
+ .alturaTabla{
+    max-height: 250px;
+ }
+.scrollEstatico{
+    position: sticky;
+    top: 0;
+}
+.VentasGraficoHoy{
+    color: rgba(0, 0, 0, 0.66);
+}
+.grafico{
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+.fotito{
+    position: fixed;
+    
+    width: 88px;
+    top: 170px;
+    right: 570px;
+}
+.nombres{
+    top: 150px
+}

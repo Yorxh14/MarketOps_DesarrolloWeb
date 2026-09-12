@@ -1,56 +1,216 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>MarketOps</title>
-    
-    <style>
-    .btn-primary {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-    </style>
 
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MarketOps</title>
 </head>
+
 <body>
     <div class="container-fluid">
-        
-    
-    <div class="row vh-100">
-        
-       <div class="col-2 bg-dark text-white p-3">
-            <p style="text-align: center;">Secciones</p>
-            <hr>
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link text-white-50 change" href="index.html">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white-50 change" href="inventario.html">Inventario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active text-white fw-bold change" aria-current="page" href="ganancias.html">Ganancias</a>
-                </li>
-                
-            </ul>
-        </div>
-        
-        <div class="col-10 bg-light text-dark p-4 position:relative">
 
-            <a class="btn btn-primary" href="sesion.html">Iniciar Sesion</a>
+        <div class="row vh-100">
+
+            <div class="col-2 bg-dark text-white p-3">
+                <h4 class="alinearCentro">Secciones</h4>
+                <hr>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 fs-5 py-4 px-6" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 fs-5 py-4 px-6" aria-current="page"
+                            href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white fw-bold fs-4 py-3 px-2" href="ganancias.html">Ganancias</a>
+                    </li>
+
+                </ul>
+            </div>
             
-            <h2 class="text-center">Dashboard</h2>
-            
-            
-            
-        </div>
-            
+            <div class="col-10 bg-light text-dark p-4">
+                <h2 class="text-center">Inventario</h2>
+                <label for="search" class="form-label" >Buscar producto:</label>
+                <input type="text" class="form-control mb-3" id="search" oninput="buscarProducto()" placeholder="Ingrese el nombre del producto">
+                <div class="dropdown">
+                    
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filtrar Categoria
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Hogar')">Hogar</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Alimentos')">Alimentos</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Gamer')">Gamer</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Licores')">Licores</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('todos')">Mostrar todos</a></li>
+                    </ul>
+                </div>
+                
+                <br>
+                <div class="table-responsive">
+
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Categoria</th>
+                                
+                                <th>Ganancias</th>
+                                
+                            </tr>
+
+                        </thead>
+                        <th>
+                            <tbody id="productTableBody">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Refrigerador</td>
+                                    <td>Hogar</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning barraswarning"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Lavadora</td>
+                                    <td>Hogar</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger barrasdanger" ></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>teclado mecanico</td>
+                                    <td>Gamer</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success barrassuccess"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Aspiradora</td>
+                                    <td>Hogar</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning barraswarning"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Fideos</td>
+                                    <td>Alimentos</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning barraswarning"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Telefonos</td>
+                                    <td>Gamer</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success barrassuccess"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>Television</td>
+                                    <td>Hogar</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger barrasdanger"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>Mouse</td>
+                                    <td>Gamer</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger barrasdanger"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>Papas Lays</td>
+                                    <td>Alimentos</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success barrassuccess"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>Cerveza</td>
+                                    <td>Licores</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success barrassuccess" ></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">11</th>
+                                    <td>Marraqueta</td>
+                                    <td>Alimentos</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger barrasdanger"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">12</th>
+                                    <td>Blue Label</td>
+                                    <td>Licores</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning barraswarning"></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">13</th>
+                                    <td>Harina</td>
+                                    <td>Alimentos</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success barrassuccess" ></div>
+</div></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th scope="row">14</th>
+                                    <td>Audifonos</td>
+                                    <td>Gamer</td>
+                                    <td><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success barrassuccess" ></div>
+</div></td>
+                                    
+                                </tr>
+
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
 
         </div>
     </div>
 
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
