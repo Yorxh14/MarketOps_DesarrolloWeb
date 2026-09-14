@@ -5,41 +5,24 @@
     width: 30rem;
 }  
 .cartitados {
-    position: fixed;
-    top: 150px; 
-    right: 1050px;
-    
-    
-    width: 30rem;
-    height: 18rem;
+    width: calc(50% - 0.5rem);
+    height: auto;
 }
 .Cartitdadostext{
  text-align: center;
 }
-.cartitatres {
-    position: fixed;
-    top: 150px; 
-    right: 550px;
-    
-    
-    width: 30rem;
-    height: 18rem;
+.cartitatres {    
+    width: calc(50% - 0.5rem);
+    height: auto;
 }
 
 .cartitacuatro {
-    position: fixed;
-    top: 459px; 
-    right: 550px;
-    
-    
     width: 61.3rem;
-    height: 19.1rem;
+    height: auto;
 }
 
 .cartita {
-    position: fixed;
-    top: 150px; 
-    right: 50px;
+    width: 30rem;
 }
 .colores{
     right: 0px;
@@ -85,11 +68,11 @@
     width: 100%;
 }
 .fotito{
-    position: fixed;
+   
     
     width: 88px;
     top: 170px;
-    right: 570px;
+    
 }
 .nombres{
     top: 150px

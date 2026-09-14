@@ -2,212 +2,323 @@
 <html lang="es">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/style.css">
 
     <title>MarketOps</title>
 
+    <style>
+        .contenido-dashboard .cartitados,
+        .contenido-dashboard .cartitatres,
+        .contenido-dashboard .cartitacuatro {
+            width: 100%;
+            height: auto;
+            min-width: 0;
+        }
+
+        .contenido-dashboard .cartitados,
+        .contenido-dashboard .cartitatres {
+            height: 100%;
+        }
+
+        .encabezado-dashboard .btn-dark {
+            position: static;
+        }
+
+        .presentacion-marketops {
+            font-size: 14px;
+        }
+
+        .presentacion-marketops h5 {
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
+        <div class="row min-vh-100">
 
-
-        <div class="row vh-100">
-
+            
             <div class="col-2 bg-dark text-white p-3">
                 <h4 class="alinearCentro">Secciones</h4>
                 <hr>
+
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active text-white fw-bold fs-4 py-3 px-2" aria-current="page"
-                            href="index.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white-50 fs-5 py-4 px-6" href="inventario.html">Inventario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white-50 fs-5 py-4 px-6" href="ganancias.html">Ganancias</a>
+                        <a
+                            class="nav-link active text-white fw-bold fs-4 py-3 px-2"
+                            aria-current="page"
+                            href="index.html">
+                            Dashboard
+                        </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a
+                            class="nav-link text-white-50 fs-5 py-4 px-2"
+                            href="inventario.html">
+                            Inventario
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link text-white-50 fs-5 py-4 px-2"
+                            href="ganancias.html">
+                            Ganancias
+                        </a>
+                    </li>
                 </ul>
-                
             </div>
 
-            <div class="col-10 bg-light text-dark p-4 position:relative">
+            <div class="col-10 bg-light text-dark p-4">
 
-                <a class="btn btn-dark" href="sesion.html">Iniciar Sesion</a>
-
-                <div class="bg-dark text-white w-100 py-4 px-4 mb-4 shadow">
+                <div class="encabezado-dashboard bg-dark text-white py-4 px-4 mb-4 shadow">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <h3 class="fw-bold mb-0">Dashboard</h3>
+                        <h3 class="fw-bold mb-0">Dashboard</h3>
+
+                        <a class="btn btn-dark" href="sesion.html">
+                            Iniciar Sesión
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row g-3 contenido-dashboard">
+
+                    <div class="col-12 col-lg-9">
+                        <div class="row g-3">
+
+
+                            <div class="col-12 col-md-6">
+                                <div class="card cartitados">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            Últimos movimientos
+                                        </h5>
+
+                                        <p class="card-text Cartitdadostext">
+                                            Venta de teclado mecánico - Hora:
+                                        </p>
+
+                                        <p class="card-text Cartitdadostext">
+                                            Venta de teléfonos - Hora:
+                                        </p>
+
+                                        <p class="card-text Cartitdadostext">
+                                            Venta de cerveza - Hora:
+                                        </p>
+
+                                        <p class="card-text Cartitdadostext">
+                                            Venta de papas lays - Hora:
+                                        </p>
+
+                                        <p class="card-text Cartitdadostext">
+                                            Venta de audífonos - Hora:
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-12 col-md-6">
+                                <div class="card cartitatres">
+                                    <div class="card-body">
+                                        <img
+                                            src="https://cdn-icons-png.flaticon.com/512/2660/2660227.png"
+                                            class="fotito"
+                                            alt="Monedas y gráfico de ventas">
+
+                                        <h5 class="card-title">Ventas de Hoy</h5>
+                                        <h5 class="card-subtitle">$850.000 CLP</h5>
+                                        <h6 class="card-title VentasGraficoHoy">Hoy</h6>
+
+                                        <div class="grafico">
+                                            <canvas id="migrafico"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <div class="col-12">
+                                <div class="card cartitacuatro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            Artículos Populares
+                                        </h5>
+
+                                        <div class="table-responsive overflow-auto alturaTabla">
+                                            <table class="table">
+                                                <thead class="scrollEstatico">
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Producto</th>
+                                                        <th>Categoría</th>
+                                                        <th>Ventas</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody id="productTableBody">
+                                                    <tr>
+                                                        <th scope="row">7</th>
+                                                        <td>Televisión</td>
+                                                        <td>Hogar</td>
+                                                        <td>15</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">11</th>
+                                                        <td>Marraqueta</td>
+                                                        <td>Alimentos</td>
+                                                        <td>100</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">12</th>
+                                                        <td>Blue Label</td>
+                                                        <td>Licores</td>
+                                                        <td>67</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">14</th>
+                                                        <td>Audífonos</td>
+                                                        <td>Gamer</td>
+                                                        <td>15</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Refrigerador</td>
+                                                        <td>Hogar</td>
+                                                        <td>12</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Lavadora</td>
+                                                        <td>Hogar</td>
+                                                        <td>8</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Teclado mecánico</td>
+                                                        <td>Gamer</td>
+                                                        <td>3</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>Aspiradora</td>
+                                                        <td>Hogar</td>
+                                                        <td>4</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">5</th>
+                                                        <td>Fideos</td>
+                                                        <td>Alimentos</td>
+                                                        <td>13</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div>
+                    </div>
 
+                
+                    <div class="col-12 col-lg-3">
+                        <div class="card presentacion-marketops">
+
+                            <div class="text-center pt-3">
+                                <h2 class="fw-bold fs-5 mb-0">MarketOps</h2>
+                            </div>
+
+                            <hr class="mb-0">
+
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">¿Qué es?</h5>
+
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    Descripción
+                                </h6>
+
+                                <p class="card-text">
+                                    MarketOPS es una plataforma web hecha para
+                                    gestionar y administrar las operaciones de un
+                                    market, permitiendo organizar productos,
+                                    inventario, ventas y ganancias de manera
+                                    centralizada.
+                                </p>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">
+                                    ¿Para qué sirve?
+                                </h5>
+
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    Funcionalidad
+                                </h6>
+
+                                <p class="card-text">
+                                    Sirve para facilitar la gestión de un market,
+                                    permitiendo controlar el inventario, registrar
+                                    productos y ventas, consultar información y
+                                    llevar un seguimiento de las ganancias
+                                    obtenidas.
+                                </p>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">
+                                    ¿Por qué la usaría?
+                                </h5>
+
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    Beneficios
+                                </h6>
+
+                                <p class="card-text">
+                                    La usaría porque permite mantener la
+                                    información del negocio organizada en un
+                                    solo lugar, facilitando el control de los
+                                    productos, las ventas y las ganancias,
+                                    además de ahorrar tiempo en la gestión
+                                    de las operaciones.
+                                </p>
+                            </div>
 
                         </div>
                     </div>
-                </div>
-
-                <div class="card cartitados ">
-                    <div class="card-body">
-                        <h5 class="card-title">Ultimos movimientos</h5>
-
-                        <p class="card-text Cartitdadostext">Venta de teclado mecanico - Hora:</p>
-                        <p class="card-text Cartitdadostext">Venta de telefonos - Hora:</p>
-                        <p class="card-text Cartitdadostext">Venta de cerveza - Hora:</p>
-                        <p class="card-text Cartitdadostext">Venta de papas lays - Hora:</p>
-                        <p class="card-text Cartitdadostext">Venta de Audifonos - Hora:</p>
-                    </div>
-                </div>
-                <div class="card cartitatres ">
-                    <div class="card-body">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2660/2660227.png" class="fotito">
-                        <h5 class="card-title">Ventas de Hoy</h5>
-                        <h5 class="card-subtitle">$850.000 CLP</h5>
-                        <h6 class="card-title VentasGraficoHoy">Hoy</h6>
-                        <div class="grafico">
-                            <canvas id="migrafico"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card cartitacuatro ">
-                    <div class="card-body">
-                        <h5 class="card-title">Articulos Populares</h5>
-                        <div class="table-responsive overflow-auto alturaTabla">
-
-                            <table class="table">
-                                <thead class="scrollEstatico">
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Categoria</th>
-                                        <th>Ventas</th>
-                                        <th>Ingresos</th>
-                                    </tr>
-
-                                </thead>
-
-                                <tbody id="productTableBody">
-                                    <tr>
-
-                                    <tr>
-                                        <th scope="row">7</th>
-                                        <td>Television</td>
-                                        <td>Hogar</td>
-                                        <td>15</td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">11</th>
-                                        <td>Marraqueta</td>
-                                        <td>Alimentos</td>
-                                        <td>100</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">12</th>
-                                        <td>Blue Label</td>
-                                        <td>Licores</td>
-                                        <td>67</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">14</th>
-                                        <td>Audifonos</td>
-                                        <td>Gamer</td>
-                                        <td>15</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Refrigerador</td>
-                                        <td>Hogar</td>
-                                        <td>12</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Lavadora</td>
-                                        <td>Hogar</td>
-                                        <td>8</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>teclado mecanico</td>
-                                        <td>Gamer</td>
-                                        <td>3</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Aspiradora</td>
-                                        <td>Hogar</td>
-                                        <td>4</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Fideos</td>
-                                        <td>Alimentos</td>
-                                        <td>13</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="card cardwidth cartita">
-
-                    <div class="text-center pt-4">
-                        <h2 class="fw-bold mb-0">MarketOps</h2>
-                    </div>
-                    <hr>
-                    <div class="card-body mb-1">
-                        <h5 class="card-title fw-bold">¿Que es?</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Descripcion</h6>
-                        <p class="card-text">MarketOPS es una plataforma web hecha para gestionar y administrar las
-                            operaciones de un market, permitiendo organizar productos, inventario, ventas y ganancias de
-                            manera centralizada.
-                        </p>
-                    </div>
-
-                    <div class="card-body mb-1 ">
-                        <h5 class="card-title fw-bold">¿Para que sirve?</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Funcionalidad</h6>
-                        <p class="card-text">Sirve para facilitar la gestion de un market, permitiendo controlar el
-                            inventario, registrar productos y ventas, consultar información y llevar un seguimiento de
-                            las ganancias obtenidas..</p>
-                    </div>
-                    <div class="card-body mb-2 ">
-                        <h5 class="card-title fw-bold ">¿Por que la usaria?</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary ">Beneficios</h6>
-                        <p class="card-text ">La usaria porque permite mantener la información del negocio organizada en
-                            un solo lugar, facilitando el control de los productos, las ventas y las ganancias, además
-                            de ahorrar tiempo en la gestion de las operaciones.</p>
-                    </div>
 
                 </div>
-
-
             </div>
-
-
         </div>
-
-
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/app.js"></script>
-
 </body>
 
 </html>
