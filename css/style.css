@@ -77,3 +77,25 @@
 .nombres{
     top: 150px
 }
+
+/* Responsive: en pantallas de celular/tablet (menos de 768px),
+   el menu lateral se apila arriba del contenido (gracias a las
+   clases col-12 col-md-2 / col-12 col-md-10 en el HTML). Aqui
+   solo achicamos el menu para que no ocupe tanto alto y se vea
+   mas como una barra de navegacion. */
+@media (max-width: 767.98px) {
+    .nav.flex-column {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav.flex-column .nav-item {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    .nav.flex-column .nav-link {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        font-size: 1rem !important;
+    }
+}

@@ -75,6 +75,7 @@ Además, se utilizan validaciones básicas hechas con JavaScript.
 
 5. Dirección IP utilizada en el despliegue
 Para publicar MarketOps utilizamos una instancia de AWS EC2.
-Dirección IP pública:
 
-Enlace de acceso al MarketOps
+Dirección IP pública:100.57.75.198 (Matias Sepulveda)
+
+Enlace de acceso al MarketOps:http://100.57.75.198/
