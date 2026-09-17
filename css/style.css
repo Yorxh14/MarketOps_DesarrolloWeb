@@ -4,35 +4,42 @@
 .cardwidth{
     width: 30rem;
 }  
-.cartitados {
-    width: calc(50% - 0.5rem);
-    height: auto;
-}
+
 .Cartitdadostext{
  text-align: center;
 }
-.cartitatres {    
-    width: calc(50% - 0.5rem);
-    height: auto;
-}
-
-.cartitacuatro {
-    width: 61.3rem;
-    height: auto;
-}
-
 .cartita {
     width: 30rem;
 }
+.contenido-dashboard .cartitados,
+        .contenido-dashboard .cartitatres,
+        .contenido-dashboard .cartitacuatro {
+            width: 100%;
+            height: auto;
+            min-width: 0;
+        }
+
+        .contenido-dashboard .cartitados,
+        .contenido-dashboard .cartitatres {
+            height: 100%;
+        }
+
+        .encabezado-dashboard .btn-dark {
+            position: static;
+        }
+
+        .presentacion-marketops {
+            font-size: 14px;
+        }
+
+        .presentacion-marketops h5 {
+            font-size: 16px;
+        }
 .colores{
     right: 0px;
     top: 0px;
 }
-.btn-dark {
- position: absolute;
-    top: 44px;
-   right: 50px;
- }
+
  .barrasdanger{
     width: 25%;
  }
@@ -76,26 +83,4 @@
 }
 .nombres{
     top: 150px
-}
-
-/* Responsive: en pantallas de celular/tablet (menos de 768px),
-   el menu lateral se apila arriba del contenido (gracias a las
-   clases col-12 col-md-2 / col-12 col-md-10 en el HTML). Aqui
-   solo achicamos el menu para que no ocupe tanto alto y se vea
-   mas como una barra de navegacion. */
-@media (max-width: 767.98px) {
-    .nav.flex-column {
-        flex-direction: row !important;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .nav.flex-column .nav-item {
-        flex: 1 1 auto;
-        text-align: center;
-    }
-    .nav.flex-column .nav-link {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-        font-size: 1rem !important;
-    }
 }
