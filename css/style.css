@@ -1,0 +1,89 @@
+.alinearCentro{
+    text-align: center;
+}
+.cardwidth{
+    width: 30rem;
+}  
+
+.Cartitdadostext{
+ text-align: center;
+}
+.cartita {
+    width: 30rem;
+}
+.contenido-dashboard .cartitados,
+        .contenido-dashboard .cartitatres,
+        .contenido-dashboard .cartitacuatro {
+            width: 100%;
+            height: auto;
+            min-width: 0;
+        }
+
+        .contenido-dashboard .cartitados,
+        .contenido-dashboard .cartitatres {
+            height: 100%;
+        }
+
+        .encabezado-dashboard .btn-dark {
+            position: static;
+        }
+
+        .presentacion-marketops {
+            font-size: 14px;
+        }
+
+        .presentacion-marketops h5 {
+            font-size: 16px;
+        }
+.colores{
+    right: 0px;
+    top: 0px;
+}
+
+ .barrasdanger{
+    width: 25%;
+ }
+
+ .barraswarning{
+    width: 55%;
+ }
+ .barrassuccess {
+ width: 95%;
+ }
+ .ajusteSesion{
+    width: 100%; max-width: 400px;
+ }
+ .colorIniciarSesion{
+    color: rgb(1, 14, 24);
+ }
+ .tamanoP{
+    font-size: 13px; opacity: 0.7;
+ }
+ .alturaTabla{
+    max-height: 250px;
+ }
+.scrollEstatico{
+    position: sticky;
+    top: 0;
+}
+.VentasGraficoHoy{
+    color: rgba(0, 0, 0, 0.66);
+}
+.grafico{
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+.fotito{
+   
+    
+    width: 88px;
+    top: 170px;
+    
+}
+.nombres{
+    top: 150px
+}
+[x-cloak] {
+    display: none !important;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MarketOps</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row min-vh-100">
+
+            <div class="col-12 col-md-2 bg-dark text-white p-3">
+                <h4 class="alinearCentro">Secciones</h4>
+                <hr>
+                <ul class="nav flex-md-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 fs-5 py-4 px-6" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 fs-5 py-4 px-6" aria-current="page"
+                            href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white fw-bold fs-4 py-3 px-2" href="ganancias.html">Ganancias</a>
+                    </li>
+
+                </ul>
+            </div>
+            
+            <div class="col-12 col-md-10 bg-light text-dark p-4" x-data="ganancias()">
+                <h2 class="text-center">Ganancias</h2>
+                <label for="search" class="form-label">Buscar producto:</label>
+                <input type="text" class="form-control mb-3" id="search" x-model="busqueda" placeholder="Ingrese el nombre del producto">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        x-text="categoria === 'todos' ? 'Filtrar Categoria' : 'Categoria: ' + categoria">
+                        Filtrar Categoria
+                    </button>
+                    <ul class="dropdown-menu">
+                        <template x-for="c in categorias" :key="c">
+                            <li><a class="dropdown-item" href="#" @click.prevent="categoria = c" x-text="c"></a></li>
+                        </template>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#" @click.prevent="categoria = 'todos'">Mostrar todos</a></li>
+                    </ul>
+                </div>
+                <br>
+
+                <div x-show="cargando" x-cloak class="alert alert-info">Cargando ganancias...</div>
+                <div x-show="error" x-cloak class="alert alert-danger" x-text="error"></div>
+                <div x-show="!cargando && !error && filtrados.length === 0" x-cloak class="alert alert-warning">
+                    No hay productos que coincidan con la búsqueda o el filtro.
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Categoria</th>
+                                <th>Ganancias</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <template x-for="r in filtrados" :key="r.id">
+                                <tr>
+                                    <th scope="row" x-text="r.id"></th>
+                                    <td x-text="r.nombre"></td>
+                                    <td x-text="r.categoria"></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1" role="progressbar" aria-label="Ganancia"
+                                                :aria-valuenow="porcentaje(r)" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                                    :class="colorBarra(r)" :style="{ width: porcentaje(r) + '%' }"></div>
+                                            </div>
+                                            <span class="small text-nowrap" x-text="clp(r.ganancia)"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

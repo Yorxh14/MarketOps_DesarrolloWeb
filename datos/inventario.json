@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "nombre": "Refrigerador",
+    "categoria": "Hogar",
+    "cantidad": 12,
+    "precio": 189990
+  },
+  {
+    "id": 2,
+    "nombre": "Lavadora",
+    "categoria": "Hogar",
+    "cantidad": 8,
+    "precio": 249990
+  },
+  {
+    "id": 3,
+    "nombre": "Teclado mecánico",
+    "categoria": "Gamer",
+    "cantidad": 3,
+    "precio": 79990
+  },
+  {
+    "id": 4,
+    "nombre": "Aspiradora",
+    "categoria": "Hogar",
+    "cantidad": 4,
+    "precio": 79990
+  },
+  {
+    "id": 5,
+    "nombre": "Fideos",
+    "categoria": "Alimentos",
+    "cantidad": 13,
+    "precio": 990
+  },
+  {
+    "id": 6,
+    "nombre": "Teléfonos",
+    "categoria": "Gamer",
+    "cantidad": 1,
+    "precio": 759990
+  },
+  {
+    "id": 7,
+    "nombre": "Televisión",
+    "categoria": "Hogar",
+    "cantidad": 15,
+    "precio": 499990
+  },
+  {
+    "id": 8,
+    "nombre": "Mouse",
+    "categoria": "Gamer",
+    "cantidad": 30,
+    "precio": 34990
+  },
+  {
+    "id": 9,
+    "nombre": "Papas Lays",
+    "categoria": "Alimentos",
+    "cantidad": 30,
+    "precio": 2500
+  },
+  {
+    "id": 10,
+    "nombre": "Cerveza",
+    "categoria": "Licores",
+    "cantidad": 50,
+    "precio": 1000
+  },
+  {
+    "id": 11,
+    "nombre": "Marraqueta",
+    "categoria": "Alimentos",
+    "cantidad": 100,
+    "precio": 500
+  },
+  {
+    "id": 12,
+    "nombre": "Blue Label",
+    "categoria": "Licores",
+    "cantidad": 67,
+    "precio": 250000
+  },
+  {
+    "id": 13,
+    "nombre": "Harina",
+    "categoria": "Alimentos",
+    "cantidad": 17,
+    "precio": 1000
+  },
+  {
+    "id": 14,
+    "nombre": "Audífonos",
+    "categoria": "Gamer",
+    "cantidad": 15,
+    "precio": 30000
+  }
+]

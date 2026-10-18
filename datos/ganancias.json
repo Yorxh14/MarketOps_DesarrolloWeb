@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "nombre": "Refrigerador",
+    "categoria": "Hogar",
+    "unidades_vendidas": 3,
+    "ingresos": 569970,
+    "ganancia": 102595
+  },
+  {
+    "id": 2,
+    "nombre": "Lavadora",
+    "categoria": "Hogar",
+    "unidades_vendidas": 2,
+    "ingresos": 499980,
+    "ganancia": 99996
+  },
+  {
+    "id": 3,
+    "nombre": "Teclado mecánico",
+    "categoria": "Gamer",
+    "unidades_vendidas": 6,
+    "ingresos": 479940,
+    "ganancia": 167979
+  },
+  {
+    "id": 4,
+    "nombre": "Aspiradora",
+    "categoria": "Hogar",
+    "unidades_vendidas": 4,
+    "ingresos": 319960,
+    "ganancia": 95988
+  },
+  {
+    "id": 5,
+    "nombre": "Fideos",
+    "categoria": "Alimentos",
+    "unidades_vendidas": 85,
+    "ingresos": 84150,
+    "ganancia": 12622
+  },
+  {
+    "id": 6,
+    "nombre": "Teléfonos",
+    "categoria": "Gamer",
+    "unidades_vendidas": 1,
+    "ingresos": 759990,
+    "ganancia": 91199
+  },
+  {
+    "id": 7,
+    "nombre": "Televisión",
+    "categoria": "Hogar",
+    "unidades_vendidas": 2,
+    "ingresos": 999980,
+    "ganancia": 149997
+  },
+  {
+    "id": 8,
+    "nombre": "Mouse",
+    "categoria": "Gamer",
+    "unidades_vendidas": 12,
+    "ingresos": 419880,
+    "ganancia": 167952
+  },
+  {
+    "id": 9,
+    "nombre": "Papas Lays",
+    "categoria": "Alimentos",
+    "unidades_vendidas": 70,
+    "ingresos": 175000,
+    "ganancia": 52500
+  },
+  {
+    "id": 10,
+    "nombre": "Cerveza",
+    "categoria": "Licores",
+    "unidades_vendidas": 120,
+    "ingresos": 120000,
+    "ganancia": 42000
+  },
+  {
+    "id": 11,
+    "nombre": "Marraqueta",
+    "categoria": "Alimentos",
+    "unidades_vendidas": 300,
+    "ingresos": 150000,
+    "ganancia": 37500
+  },
+  {
+    "id": 12,
+    "nombre": "Blue Label",
+    "categoria": "Licores",
+    "unidades_vendidas": 2,
+    "ingresos": 500000,
+    "ganancia": 110000
+  },
+  {
+    "id": 13,
+    "nombre": "Harina",
+    "categoria": "Alimentos",
+    "unidades_vendidas": 40,
+    "ingresos": 40000,
+    "ganancia": 8000
+  },
+  {
+    "id": 14,
+    "nombre": "Audífonos",
+    "categoria": "Gamer",
+    "unidades_vendidas": 10,
+    "ingresos": 300000,
+    "ganancia": 114000
+  }
+]

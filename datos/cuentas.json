@@ -1,0 +1,17 @@
+[
+    {
+        "correo": "jonathan.frez@gmail.com",
+        "contrasena":"123",
+        "activo": true
+    },
+    {
+        "correo": "admin@gmail.com",
+        "contrasena":"12345",
+        "activo": true
+    },
+    {
+        "correo":"bloqueado@gmail.com",
+        "contrasena": "0000",
+        "activo": false
+    }
+]

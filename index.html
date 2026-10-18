@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>MarketOps</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+
+    
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+
+            
+            <div class="col-12 col-md-2 bg-dark text-white p-3">
+                <h4 class="alinearCentro">Secciones</h4>
+                <hr>
+                <ul class="nav flex-md-column">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white fw-bold fs-4 py-3 px-2"  href="index.html" aria-current="page">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 fs-5 py-4 px-6" href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white-50 fs-5 py-4 px-6" href="ganancias.html">Ganancias</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-10 bg-light text-dark p-4" x-data="dashboard()">
+
+                <div class="encabezado-dashboard bg-dark text-white py-4 px-4 mb-4 shadow">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="fw-bold mb-0">Dashboard</h3>
+
+                        <a class="btn btn-dark" href="sesion.html">
+                            Iniciar Sesión
+                        </a>
+                    </div>
+                </div>
+
+                <div x-show="cargando" x-cloak class="alert alert-info">Cargando datos del dashboard...</div>
+                <div x-show="error" x-cloak class="alert alert-danger" x-text="error"></div>
+
+                <div class="row g-3 contenido-dashboard">
+
+                    <div class="col-12 col-lg-9">
+                        <div class="row g-3">
+
+
+                            <div class="col-12 col-md-6">
+                                <div class="card cartitados">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            Stock bajo
+                                        </h5>
+
+                                        <template x-for="p in pocoStock" :key="p.id">
+                                            <p class="card-text Cartitdadostext" x-text="p.nombre + ' - Stock: ' + p.cantidad"></p>
+                                        </template>
+                                        <p class="card-text Cartitdadostext" x-show="!cargando && !error && pocoStock.length === 0" x-cloak>
+                                            No hay productos en inventario.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-12 col-md-6">
+                                <div class="card cartitatres">
+                                    <div class="card-body">
+                                        <img
+                                            src="https://cdn-icons-png.flaticon.com/512/2660/2660227.png"
+                                            class="fotito"
+                                            alt="Monedas y gráfico de ventas">
+
+                                        <h5 class="card-title">Ventas Totales</h5>
+                                        <h5 class="card-subtitle" x-text="cargando || error ? '—' : clp(totalVentas) + ' CLP'"></h5>
+                                        <h6 class="card-title VentasGraficoHoy">Facturacion y ganancia por categoria</h6>
+
+                                        <div class="grafico">
+                                            <canvas id="migrafico"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <div class="col-12">
+                                <div class="card cartitacuatro">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            Artículos Populares
+                                        </h5>
+
+                                        <div class="table-responsive overflow-auto alturaTabla">
+                                            <table class="table">
+                                                <thead class="scrollEstatico">
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Producto</th>
+                                                        <th>Categoría</th>
+                                                        <th>Ventas</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <template x-for="p in populares" :key="p.id">
+                                                        <tr>
+                                                            <th scope="row" x-text="p.id"></th>
+                                                            <td x-text="p.nombre"></td>
+                                                            <td x-text="p.categoria"></td>
+                                                            <td x-text="p.unidades_vendidas"></td>
+                                                        </tr>
+                                                    </template>
+                                                    <tr x-show="!cargando && !error && populares.length === 0" x-cloak>
+                                                        <td colspan="4" class="text-center text-muted">No hay ventas registradas.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                
+                    <div class="col-12 col-lg-3">
+                        <div class="card presentacion-marketops">
+
+                            <div class="text-center pt-3">
+                                <h2 class="fw-bold fs-5 mb-0">MarketOps</h2>
+                            </div>
+
+                            <hr class="mb-0">
+
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">¿Qué es?</h5>
+
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    Descripción
+                                </h6>
+
+                                <p class="card-text">
+                                    MarketOPS es una plataforma web hecha para
+                                    gestionar y administrar las operaciones de un
+                                    market, permitiendo organizar productos,
+                                    inventario, ventas y ganancias de manera
+                                    centralizada.
+                                </p>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">
+                                    ¿Para qué sirve?
+                                </h5>
+
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    Funcionalidad
+                                </h6>
+
+                                <p class="card-text">
+                                    Sirve para facilitar la gestión de un market,
+                                    permitiendo controlar el inventario, registrar
+                                    productos y ventas, consultar información y
+                                    llevar un seguimiento de las ganancias
+                                    obtenidas.
+                                </p>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">
+                                    ¿Por qué la usaría?
+                                </h5>
+
+                                <h6 class="card-subtitle mb-2 text-body-secondary">
+                                    Beneficios
+                                </h6>
+
+                                <p class="card-text">
+                                    La usaría porque permite mantener la
+                                    información del negocio organizada en un
+                                    solo lugar, facilitando el control de los
+                                    productos, las ventas y las ganancias,
+                                    además de ahorrar tiempo en la gestión
+                                    de las operaciones.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
