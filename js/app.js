@@ -231,7 +231,7 @@ function sesionApp(){
                 esValido=false;
             }
             if(this.contrasena.trim()===""){
-                this.errorContra="La contraseña no puede estar vacia (la troleaste bro)";
+                this.errorContra="La contraseña no puede estar vacia";
                 esValido=false;
             }
             if(esValido){
@@ -242,10 +242,10 @@ function sesionApp(){
                     if(cuentaEncontrada.activo===true){
                         window.location.href="index.html";
                     }else{
-                        this.mensajeGeneral="Esta cuenta esta desactiviada";
+                        this.mensajeGeneral="Esta cuenta esta desactivada";
                     }
                 }else{
-                    this.mensajeGeneral="Correo o contraseña incorrectos bro";
+                    this.mensajeGeneral="Correo o contraseña incorrectos";
                 }
             }
         }
