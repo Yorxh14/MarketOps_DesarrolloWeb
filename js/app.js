@@ -100,7 +100,7 @@ function dashboard() {
             return [...this.ventas].sort((a, b) => b.unidades_vendidas - a.unidades_vendidas).slice(0, 9);
         },
 
-        // Los 5 productos con menos unidades en inventario
+        // Los 9 productos con menos unidades en inventario
         get pocoStock() {
             return [...this.productos].sort((a, b) => a.cantidad - b.cantidad).slice(0, 9);
         },
@@ -169,6 +169,7 @@ function inventario() {
         categoria: "todos",
         cargando: true,
         error: "",
+        mostrarAyuda: false,
 
         async init() {
             try {

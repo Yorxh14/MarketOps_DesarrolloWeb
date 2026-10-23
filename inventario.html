@@ -36,6 +36,17 @@
             
             <div class="col-12 col-md-10 bg-light text-dark p-4" x-data="inventario()">
                 <h2 class="text-center">Inventario</h2>
+                <button type="button" class="btn btn-outline-primary btn-sm mb-3" @click="mostrarAyuda = !mostrarAyuda"
+                    x-text="mostrarAyuda ? 'Ocultar ayuda' : 'Mostrar ayuda'">Mostrar ayuda</button>
+                <div class="alert alert-info" x-show="mostrarAyuda" x-cloak>
+                    <h5 class="alert-heading">¿Cómo usar el inventario?</h5>
+                    <ul class="mb-0">
+                        <li><strong>Buscar productos:</strong> escribe el nombre del producto en el campo "Buscar producto" y la tabla se filtrará mientras escribes.</li>
+                        <li><strong>Aplicar filtros:</strong> usa el botón "Filtrar Categoria" para ver solo una categoría, o selecciona "Mostrar todos" para volver a la lista completa.</li>
+                        <li><strong>Consultar stock:</strong> la columna "Cantidad" indica las unidades disponibles de cada producto.</li>
+                        <li><strong>Visualizar la información:</strong> la tabla muestra el ID, nombre, categoría, cantidad y precio (CLP) de cada producto. Si ningún producto coincide con la búsqueda o el filtro, se mostrará un aviso.</li>
+                    </ul>
+                </div>
                 <label for="search" class="form-label">Buscar producto:</label>
                 <input type="text" class="form-control mb-3" id="search" x-model="busqueda" placeholder="Ingrese el nombre del producto">
                 <div class="dropdown">
