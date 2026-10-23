@@ -1,16 +1,12 @@
 .alinearCentro{
     text-align: center;
 }
-.cardwidth{
-    width: 30rem;
-}  
+
 
 .Cartitdadostext{
  text-align: center;
 }
-.cartita {
-    width: 30rem;
-}
+
 .contenido-dashboard .cartitados,
         .contenido-dashboard .cartitatres,
         .contenido-dashboard .cartitacuatro {
@@ -35,21 +31,10 @@
         .presentacion-marketops h5 {
             font-size: 16px;
         }
-.colores{
-    right: 0px;
-    top: 0px;
-}
 
- .barrasdanger{
-    width: 25%;
- }
 
- .barraswarning{
-    width: 55%;
- }
- .barrassuccess {
- width: 95%;
- }
+
+ 
  .ajusteSesion{
     width: 100%; max-width: 400px;
  }
@@ -81,9 +66,7 @@
     top: 170px;
     
 }
-.nombres{
-    top: 150px
-}
+
 [x-cloak] {
     display: none !important;
 }
