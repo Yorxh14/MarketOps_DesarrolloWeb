@@ -68,7 +68,7 @@ function ganancias() {
     };
 }
 
-let grafico = null; // fuera del estado de Alpine para que no lo envuelva en un proxy
+let grafico = null; 
 
 function dashboard() {
     return {
@@ -95,17 +95,17 @@ function dashboard() {
             return this.ventas.reduce((suma, v) => suma + v.ingresos, 0);
         },
 
-        // Los 9 productos con más unidades vendidas
+        
         get populares() {
             return [...this.ventas].sort((a, b) => b.unidades_vendidas - a.unidades_vendidas).slice(0, 9);
         },
 
-        // Los 9 productos con menos unidades en inventario
+       
         get pocoStock() {
             return [...this.productos].sort((a, b) => a.cantidad - b.cantidad).slice(0, 9);
         },
 
-        // Suma de ingresos y ganancias por categoría
+       
         get porCategoria() {
             const grupos = {};
             for (const v of this.ventas) {
